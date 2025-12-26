@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+
+// Function to convert marks to GPA
+float getGPA(float marks) {
+    if (marks >= 90) return 4.0;
+    else if (marks >= 80) return 3.5;
+    else if (marks >= 70) return 3.0;
+    else if (marks >= 60) return 2.5;
+    else if (marks >= 50) return 2.0;
+    else if (marks >= 40) return 1.0;
+    else return 0.0;
+}
+
+int main() {
+    int subjects;
+    cout << "Enter number of subjects: ";
+    cin >> subjects;
+
+    float marks, totalGPA = 0;
+
+    for (int i = 1; i <= subjects; i++) {
+        cout << "Enter marks for subject " << i << ": ";
+        cin >> marks;
+        totalGPA += getGPA(marks);
+    }
+
+    float averageGPA = totalGPA / subjects;
+    cout << "Your GPA is: " << averageGPA << endl;
+
+    return 0;
+}
